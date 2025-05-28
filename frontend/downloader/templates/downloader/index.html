@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>home</title>
+</head>
+<body>
+    <h1>SpotSnake</h1>
+    <h2>A Spotify to .mp3 converter (with metadata)</h2>
+
+    <p>Input a spotify URL, artist, albums, etc doesn't matter. To include multiple URLs, put them in seperate lines.</p>
+    <p>This website and backend were put together hastily so expect issues.</p>
+    <p>After clicking submit, feel free to leave this tab (keep it open!!) and wait for your download to finish (it will take a while).</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+    {{ download_status }}
+</body>
+</html>
