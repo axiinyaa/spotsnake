@@ -13,7 +13,7 @@
             ],
             "django": true,
             "autoStartBrowser": false,
-            "program": "${workspaceFolder}/frontend/manage.py"
+            "program": "${workspaceFolder}/manage.py"
         },
         {
             "name": "Python Debugger: Current File",

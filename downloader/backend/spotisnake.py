@@ -9,10 +9,12 @@ from downloader.backend.spotify_api import SpotifyTrack, Spotify
 from dotenv import load_dotenv
 from collections.abc import Callable
 import shutil
+from pathlib import Path
 
-load_dotenv()
+env_path = Path("/home/spotsnake.helioho.st") / ".env"
+load_dotenv(dotenv_path=env_path)
 spotify = Spotify(os.getenv("SPOTIFY_CLIENT"), os.getenv("SPOTIFY_SECRET"))
-output_dir = 'frontend/downloader/backend/output/'
+output_dir = Path("/home/spotsnake.helioho.st") / "output"
 
 def create_archive_id(urls: str):
     urls = urls.replace(' ', '')
@@ -23,6 +25,8 @@ def create_archive_id(urls: str):
     url = url.replace('album/', '')
     url = url.replace('track/', '')
     url = url.replace('artist/', '')
+    url = url.replace('?', '')
+    url = url.replace('=', '')
 
     return url
 
